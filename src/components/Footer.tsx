@@ -35,7 +35,7 @@ const Footer = () => {
               <li><a href="#services" className="text-gray-300 hover:text-[#14B8A6] transition-colors duration-200">Services</a></li>
               <li><a href="#portfolio" className="text-gray-300 hover:text-[#14B8A6] transition-colors duration-200">Portfolio</a></li>
               <li><a href="#industries" className="text-gray-300 hover:text-[#14B8A6] transition-colors duration-200">Industries</a></li>
-              <li><a href="#about" className="text-gray-300 hover:text-[#14B8A6] transition-colors duration-200">About Us</a></li>
+              <li><a href="#blogs" className="text-gray-300 hover:text-[#14B8A6] transition-colors duration-200">Blogs</a></li>
               <li><a href="#contact" className="text-gray-300 hover:text-[#14B8A6] transition-colors duration-200">Contact</a></li>
             </ul>
           </div>

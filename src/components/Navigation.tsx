@@ -30,7 +30,7 @@ const Navigation = () => {
             <a href="#services" className="text-[#475569] hover:text-[#14B8A6] transition-colors duration-200 font-medium">Services</a>
             <a href="#portfolio" className="text-[#475569] hover:text-[#14B8A6] transition-colors duration-200 font-medium">Portfolio</a>
             <a href="#industries" className="text-[#475569] hover:text-[#14B8A6] transition-colors duration-200 font-medium">Industries</a>
-            <a href="#about" className="text-[#475569] hover:text-[#14B8A6] transition-colors duration-200 font-medium">About</a>
+            <a href="#blogs" className="text-[#475569] hover:text-[#14B8A6] transition-colors duration-200 font-medium">Blogs</a>
             <a href="#contact" className="text-[#475569] hover:text-[#14B8A6] transition-colors duration-200 font-medium">Contact</a>
           </div>
 
@@ -59,7 +59,7 @@ const Navigation = () => {
               <a href="#services" className="block px-3 py-2 text-[#475569] hover:text-[#14B8A6] font-medium">Services</a>
               <a href="#portfolio" className="block px-3 py-2 text-[#475569] hover:text-[#14B8A6] font-medium">Portfolio</a>
               <a href="#industries" className="block px-3 py-2 text-[#475569] hover:text-[#14B8A6] font-medium">Industries</a>
-              <a href="#about" className="block px-3 py-2 text-[#475569] hover:text-[#14B8A6] font-medium">About</a>
+              <a href="#blogs" className="block px-3 py-2 text-[#475569] hover:text-[#14B8A6] font-medium">Blogs</a>
               <a href="#contact" className="block px-3 py-2 text-[#475569] hover:text-[#14B8A6] font-medium">Contact</a>
               <div className="px-3 py-2">
                 <button className="w-full bg-[#14B8A6] text-white px-6 py-3 rounded-lg hover:bg-[#0f9488] transition-colors font-medium">
