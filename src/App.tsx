@@ -3,7 +3,7 @@ import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import TrustMetrics from './components/TrustMetrics';
 import Services from './components/Services';
-import Industries from './components/Industries';
+import Pricing from './components/Pricing';
 import Portfolio from './components/Portfolio';
 import WhyChooseUs from './components/WhyChooseUs';
 import Testimonials from './components/Testimonials';
@@ -17,7 +17,7 @@ function App() {
       <Hero />
       <TrustMetrics />
       <Services />
-      <Industries />
+      <Pricing />
       <Portfolio />
       <WhyChooseUs />
       <Testimonials />
