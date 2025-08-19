@@ -9,6 +9,7 @@ import WhyChooseUs from './components/WhyChooseUs';
 import Testimonials from './components/Testimonials';
 import CTABand from './components/CTABand';
 import Footer from './components/Footer';
+import Contact from './components/Contact';
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
       <Portfolio />
       <WhyChooseUs />
       <Testimonials />
-      <CTABand />
+      <Contact />
+      
       <Footer />
     </div>
   );
