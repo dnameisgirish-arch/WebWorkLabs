@@ -23,7 +23,6 @@ function App() {
       <WhyChooseUs />
       <Testimonials />
       <Contact />
-      
       <Footer />
     </div>
   );

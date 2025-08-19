@@ -61,10 +61,10 @@ const Contact = () => {
 
         <div className="text-center mt-12">
           <button className="group bg-[#14B8A6] text-white px-10 py-4 rounded-xl hover:bg-[#0f9488] transition-all duration-300 font-bold text-lg shadow-2xl hover:shadow-3xl hover:scale-105 inline-flex items-center gap-3">
-            Start Your Project Today
+            Schedule Your Appointment Today
           </button>
           <p className="text-[#475569] mt-4">
-            Let's create something extraordinary together. Get in touch today and discover how we can elevate your business to new heights.
+            New client consultations available • Insurance accepted
           </p>
         </div>
       </div>
