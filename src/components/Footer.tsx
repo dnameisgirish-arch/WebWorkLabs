@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div className="md:col-span-1">
-            <h3 className="text-2xl font-bold mb-4">WebWorks Labs</h3>
+            <h3 className="text-2xl font-bold mb-4">WebWork Labs</h3>
             <p className="text-gray-300 leading-relaxed mb-6">
               Crafting exceptional web and app experiences that drive business growth through innovative technology solutions.
             </p>
