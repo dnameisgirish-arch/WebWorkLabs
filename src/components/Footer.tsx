@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -22,6 +22,22 @@ const Footer = () => {
           </a>
           <a href="#" className="text-gray-300 hover:text-[#14B8A6] transition-colors duration-200">
             <MapPin size={20} />
+          </a>
+          <a 
+            href="https://instagram.com/webworklabs" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-gray-300 hover:text-pink-400 transition-colors duration-200"
+          >
+            <Instagram size={20} />
+          </a>
+          <a 
+            href="https://linkedin.com/company/webworklabs" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-gray-300 hover:text-blue-400 transition-colors duration-200"
+          >
+            <Linkedin size={20} />
           </a>
         </div>
 

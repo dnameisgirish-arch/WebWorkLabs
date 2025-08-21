@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram, Linkedin } from 'lucide-react';
 
 const Contact = () => {
   return (
@@ -66,6 +66,29 @@ const Contact = () => {
           <p className="text-[#475569] mt-4">
             New client consultations available • Insurance accepted
           </p>
+          
+          {/* Social Media Links */}
+          <div className="mt-8">
+            <p className="text-[#475569] mb-4 text-lg font-medium">Follow us on social media</p>
+            <div className="flex justify-center space-x-6">
+              <a 
+                href="https://instagram.com/webworklabs" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="group flex items-center justify-center w-12 h-12 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 rounded-xl hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                <Instagram size={24} className="text-white" />
+              </a>
+              <a 
+                href="https://linkedin.com/company/webworklabs" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="group flex items-center justify-center w-12 h-12 bg-[#0077B5] rounded-xl hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                <Linkedin size={24} className="text-white" />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
