@@ -10,6 +10,7 @@ import Testimonials from './components/Testimonials';
 import CTABand from './components/CTABand';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
+import WhatsAppChat from './components/WhatsAppChat';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <Testimonials />
       <Contact />
       <Footer />
+      <WhatsAppChat />
     </div>
   );
 }
