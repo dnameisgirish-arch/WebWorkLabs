@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import TrustMetrics from './components/TrustMetrics';
@@ -11,12 +11,15 @@ import CTABand from './components/CTABand';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
 import WhatsAppChat from './components/WhatsAppChat';
+import ProjectModal from './components/ProjectModal'; // Import the new modal component
 
 function App() {
+  const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
+
   return (
     <div className="min-h-screen">
       <Navigation />
-      <Hero />
+      <Hero onOpenModal={() => setIsProjectModalOpen(true)} /> {/* Pass the modal opener */}
       <TrustMetrics />
       <Services />
       <Pricing />
@@ -26,6 +29,10 @@ function App() {
       <Contact />
       <Footer />
       <WhatsAppChat />
+      <ProjectModal
+        isOpen={isProjectModalOpen}
+        onClose={() => setIsProjectModalOpen(false)}
+      />
     </div>
   );
 }

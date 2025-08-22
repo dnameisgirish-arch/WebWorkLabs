@@ -70,6 +70,17 @@
     0%, 100% { box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.4); }
     50% { box-shadow: 0 0 0 10px rgba(20, 184, 166, 0); }
   }
+
+  /* Modal Animations */
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes scale-in {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
   
   /* Animation Classes */
   .animate-float {
@@ -122,5 +133,37 @@
   
   .animate-pulse-button {
     animation: pulse-button 2s infinite;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.3s ease-out forwards;
+  }
+
+  /* Custom styling for range input thumb */
+  .timeline-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #14B8A6;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 0 0 1px #14B8A6;
+    margin-top: -6px; /* Adjust to center thumb on track */
+  }
+
+  .timeline-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #14B8A6;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 0 0 1px #14B8A6;
   }
 }

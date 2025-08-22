@@ -1,7 +1,11 @@
 import React from 'react';
 import { Rocket, ArrowRight, Code, Smartphone, Globe, TrendingUp } from 'lucide-react';
 
-const Hero = () => {
+interface HeroProps {
+  onOpenModal: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
   return (
     <section className="relative min-h-screen bg-[#0D1B2A] flex items-center justify-center overflow-hidden">
       {/* Animated Background Elements */}
@@ -106,7 +110,10 @@ const Hero = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up delay-500">
-          <button className="group bg-[#14B8A6] text-white px-8 py-4 rounded-xl hover:bg-[#0f9488] transition-all duration-300 font-semibold text-lg shadow-2xl hover:shadow-[#14B8A6]/25 hover:scale-105 flex items-center gap-3 animate-pulse-button">
+          <button
+            onClick={onOpenModal} // Attach the onClick handler here
+            className="group bg-[#14B8A6] text-white px-8 py-4 rounded-xl hover:bg-[#0f9488] transition-all duration-300 font-semibold text-lg shadow-2xl hover:shadow-[#14B8A6]/25 hover:scale-105 flex items-center gap-3 animate-pulse-button"
+          >
             <Rocket size={20} className="group-hover:rotate-12 transition-transform duration-300" />
             Start Your Project
           </button>
