@@ -16,6 +16,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose }) => {
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [selectedBudget, setSelectedBudget] = useState<string | null>(null);
   const [projectTimeline, setProjectTimeline] = useState('2'); // Default to 3 months
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   if (!isOpen) return null;
 
@@ -27,21 +28,32 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to a backend
-    console.log({
-      firstName,
-      lastName,
-      email,
-      phone,
-      companyName,
-      projectDescription,
-      selectedServices,
-      selectedBudget,
-      projectTimeline: ['1 month', '3 months', '6 months', '12+ months'][parseInt(projectTimeline) - 1],
-    });
-    alert('Project request submitted! (Check console for data)');
-    onClose(); // Close modal after submission
-    // Optionally reset form fields
+    setIsSubmitting(true);
+
+    const timelineLabels = ['1 month', '3 months', '6 months', '12+ months'];
+    
+    // Create URL parameters from form data
+    const params = new URLSearchParams();
+    params.append('firstName', firstName);
+    params.append('lastName', lastName);
+    params.append('email', email);
+    params.append('phone', phone);
+    params.append('companyName', companyName);
+    params.append('projectDescription', projectDescription);
+    params.append('selectedServices', selectedServices.join(','));
+    params.append('selectedBudget', selectedBudget || '');
+    params.append('projectTimeline', timelineLabels[parseInt(projectTimeline) - 1]);
+    params.append('submittedAt', new Date().toISOString());
+
+    const webhookUrl = `https://frank-abnormally-wasp.ngrok-free.app/webhook/ad54c0cd-6b4c-41bc-b069-18022d94f530?${params.toString()}`;
+
+    // Open webhook URL in new tab
+    window.open(webhookUrl, '_blank');
+
+    // Show success message
+    alert('Project request submitted! Check the new tab for confirmation.');
+    
+    // Reset form fields
     setFirstName('');
     setLastName('');
     setEmail('');
@@ -51,6 +63,10 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose }) => {
     setSelectedServices([]);
     setSelectedBudget(null);
     setProjectTimeline('2');
+    
+    // Reset submitting state and close modal
+    setIsSubmitting(false);
+    onClose();
   };
 
   const serviceOptions = [
@@ -221,7 +237,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose }) => {
             <div className="flex justify-between text-sm text-gray-600 mt-2">
               <span>1 month</span>
               <span>3 months</span>
-							<span>6 months</span>
+              <span>6 months</span>
               <span>12+ months</span>
             </div>
           </div>
@@ -229,9 +245,12 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose }) => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-[#14B8A6] text-white px-8 py-4 rounded-xl hover:bg-[#0f9488] transition-all duration-300 font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
+            disabled={isSubmitting}
+            className={`w-full ${
+              isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-[#14B8A6] hover:bg-[#0f9488] transform hover:scale-105'
+            } text-white px-8 py-4 rounded-xl transition-all duration-300 font-bold text-lg shadow-lg hover:shadow-xl`}
           >
-            Submit Project Request
+            {isSubmitting ? 'Submitting...' : 'Submit Project Request'}
           </button>
         </form>
       </div>
