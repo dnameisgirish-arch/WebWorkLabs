@@ -2,7 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, Rocket } from 'lucide-react';
 import Logo from './Logo';
 
-const Navigation = () => {
+interface NavigationProps {
+  onOpenConsultationModal: () => void;
+}
+
+const Navigation: React.FC<NavigationProps> = ({ onOpenConsultationModal }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -35,7 +39,10 @@ const Navigation = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex">
-            <button className="bg-[#14B8A6] text-white px-6 py-3 rounded-lg hover:bg-[#0f9488] transition-all duration-200 font-medium shadow-lg hover:shadow-xl hover:scale-105">
+            <button
+              onClick={onOpenConsultationModal} // Added onClick handler
+              className="bg-[#14B8A6] text-white px-6 py-3 rounded-lg hover:bg-[#0f9488] transition-all duration-200 font-medium shadow-lg hover:shadow-xl hover:scale-105"
+            >
               Book free consultation
             </button>
           </div>
@@ -60,7 +67,13 @@ const Navigation = () => {
               <a href="#pricing" className="block px-3 py-2 text-[#475569] hover:text-[#14B8A6] font-medium">Pricing</a>
               <a href="#contact" className="block px-3 py-2 text-[#475569] hover:text-[#14B8A6] font-medium">Contact</a>
               <div className="px-3 py-2">
-                <button className="w-full bg-[#14B8A6] text-white px-6 py-3 rounded-lg hover:bg-[#0f9488] transition-colors font-medium">
+                <button
+                  onClick={() => {
+                    onOpenConsultationModal(); // Added onClick handler
+                    setIsOpen(false); // Close mobile menu after clicking
+                  }}
+                  className="w-full bg-[#14B8A6] text-white px-6 py-3 rounded-lg hover:bg-[#0f9488] transition-colors font-medium"
+                >
                   Book free consultation
                 </button>
               </div>
