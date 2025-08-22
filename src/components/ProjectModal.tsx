@@ -49,9 +49,6 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose }) => {
 
     // Open webhook URL in new tab
     window.open(webhookUrl, '_blank');
-
-    // Show success message
-    alert('Project request submitted! Check the new tab for confirmation.');
     
     // Reset form fields
     setFirstName('');
